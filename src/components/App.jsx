@@ -1,16 +1,15 @@
-export const App = () => {
+// import React, { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
+
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+<div className="App">
+<Navbar />
+<Outlet/>
+</div>
   );
-};
+
+  }
+  export default App
