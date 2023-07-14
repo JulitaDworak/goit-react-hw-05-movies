@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import { FaStar } from 'react-icons/fa'
+
 
 
 const imagesURL= `https://image.tmdb.org/t/p/w500/`

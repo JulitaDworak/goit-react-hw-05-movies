@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams} from 'react-router-dom';
 import axios from 'axios';
 
-
-const moviesURL = `https://api.themoviedb.org/3/movie/`;
-const apiKey = `9cd3003f00fa34df086a65205d0cd538`;
-const imagesURL = `https://image.tmdb.org/t/p/w500/`;
-
 const getReviews = async movieId => {
     const reviews = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}/reviews`,
