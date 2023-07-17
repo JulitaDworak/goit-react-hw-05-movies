@@ -1,40 +1,30 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { getCast } from 'services/API';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
-  
   const { id } = useParams();
 
   useEffect(() => {
-    const getCast = async () => {
+    const asyncFunc = async () => {
       try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}/credits`,
-          {
-            params: {
-              api_key: '9cd3003f00fa34df086a65205d0cd538',
-            },
-          }
-        );
-        setCast(response.data.cast);
+        setCast(await getCast(id));
       } catch (error) {
         console.log(error);
       }
     };
-
-    getCast();
+    asyncFunc();
   }, [id]);
 
   return (
     <ul>
       {cast.length === 0 ? (
         <li style={{ listStyle: 'none' }}>
-          We don't have cast information for this movie.
+          We dont have cast information for this movie
         </li>
       ) : (
-        cast.map((el) => (
+        cast.map(el => (
           <li key={el.id}>
             <img
               src={
