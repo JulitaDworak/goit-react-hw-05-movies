@@ -1,5 +1,5 @@
 import { SearchInput } from 'components/SearchInput/SearchInput';
-import { ShowMoviesList } from '../ShowMoviesList/ShowMoviesList';
+import { ShowMoviesList } from '../ShowMoviesList/ShowMoviesList'
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from 'services/API';
